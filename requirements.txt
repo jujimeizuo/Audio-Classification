@@ -1,0 +1,9 @@
+pandas
+numpy
+librosa
+Pillow
+pytorch
+torchvision
+torchaudio
+pytorch-cuda=12.1 -c pytorch -c nvidia
+efficientnet-pytorch

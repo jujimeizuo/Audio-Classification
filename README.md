@@ -14,9 +14,45 @@
 ## 问题求解
 
 <details><summary></summary>
+
+### 数据预处理
+
+首先将每个ogg转换成具有高通滤波器的梅尔频谱图，然后将其转换成数据集（dataset）。
+
+### 训练模型
+
+使用 efficientnet-b3 模型进行对数据集进行预训练.
+
+在每个训练周期中，函数会遍历训练数据，对每批数据进行前向传播、计算损失、反向传播和优化步骤。同时，它还会计算每个周期的损失和准确率，并保存最佳模型的权重。
+
+在所有训练周期结束后，函数会保存最佳模型，并返回训练损失和最佳模型的权重。
+
+
+### 验证模型
+
+使用验证集对模型进行验证，计算模型的准确率和损失。
+
+最终 acc 为 48.20%。
+
+### 测试模型
+
+将测试集中的音频文件转换成梅尔频谱图，然后使用训练好的模型进行预测。
+
+
 </details>
+
+## Task
+
+- [x] 成功跑通模型并提交结果
+- [ ] 将 ipynb 文件转换成 py 文件
+- [ ] 完善 README
 
 ## Reference
 
 <details><summary></summary>
+
+- [怎样用深度学习做语音识别](https://cloud.tencent.com/developer/article/1073521)
+- [使用PyTorch实现鸟类音频检测卷积网络模型](https://blog.csdn.net/deephub/article/details/107242407)
+- [【Kaggle】鸟叫识别](https://blog.51cto.com/AIXhao/5247318)
+- [基于声音的鸟类物种检测](https://cloud.tencent.com/developer/article/1576604)
 </details>
